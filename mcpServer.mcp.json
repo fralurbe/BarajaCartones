@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "godot-forge": {
+      "command": "npx",
+      "args": ["-y", "godot-forge"]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/CartonView.cs" id="1_vista"]
+[ext_resource type="Script" path="res://scripts/ui/CaraCarton.cs" id="2_cara"]
+[ext_resource type="Shader" path="res://shaders/inclinacion.gdshader" id="3_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_incl"]
+resource_local_to_scene = true
+shader = ExtResource("3_shader")
+
+[node name="Carton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 420.0
+offset_bottom = 176.0
+pivot_offset = Vector2(210, 88)
+script = ExtResource("1_vista")
+
+[node name="Render" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(420, 176)
+render_target_update_mode = 1
+
+[node name="Cara" type="Control" parent="Render"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 420.0
+offset_bottom = 176.0
+script = ExtResource("2_cara")
+
+[node name="Visual" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_incl")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1

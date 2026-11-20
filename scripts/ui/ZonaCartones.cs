@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 
-namespace MiGame.UI;
+namespace BarajaCartones.UI;
 
 /// <summary>Dónde debe estar un cartón dentro de su zona.</summary>
 public readonly record struct Colocacion(Vector2 Centro, float Rotacion, float Escala, int Z);

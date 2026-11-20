@@ -1,7 +1,7 @@
 using Godot;
-using MiGame.Bingo;
+using BarajaCartones.Bingo;
 
-namespace MiGame.UI;
+namespace BarajaCartones.UI;
 
 /// <summary>
 /// Dibuja la "cara" del cartón: fondo, cabecera y la rejilla 3x9.

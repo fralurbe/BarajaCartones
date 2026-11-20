@@ -1,6 +1,6 @@
 using Godot;
 
-namespace MiGame.UI;
+namespace BarajaCartones.UI;
 
 /// <summary>La mesa: los cartones jugados se colocan en una rejilla.</summary>
 public partial class Mesa : ZonaCartones

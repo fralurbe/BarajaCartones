@@ -1,6 +1,6 @@
 using Godot;
 
-namespace MiGame.UI;
+namespace BarajaCartones.UI;
 
 /// <summary>
 /// La mano: cartones en abanico, en la parte de abajo de la pantalla.

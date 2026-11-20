@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-namespace MiGame.UI;
+namespace BarajaCartones.UI;
 
 /// <summary>
 /// El descarte: un montón desordenado. Los cartones descartados ya no se

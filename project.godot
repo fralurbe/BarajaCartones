@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="MiGame - Cartones de bingo"
+config/name="barajaCartones"
 run/main_scene="res://escenas/juego.tscn"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 
@@ -22,4 +22,4 @@ window/stretch/mode="canvas_items"
 
 [dotnet]
 
-project/assembly_name="MiGame"
+project/assembly_name="BarajaCartones"

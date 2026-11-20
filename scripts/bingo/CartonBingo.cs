@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MiGame.Bingo;
+namespace BarajaCartones.Bingo;
 
 /// <summary>
 /// Datos de un cartón de bingo de 90 bolas (3 filas x 9 columnas).

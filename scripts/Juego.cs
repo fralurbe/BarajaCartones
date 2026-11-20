@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
 using Godot;
-using MiGame.Bingo;
-using MiGame.UI;
+using BarajaCartones.Bingo;
+using BarajaCartones.UI;
 
-namespace MiGame;
+namespace BarajaCartones;
 
 /// <summary>
 /// Nodo raíz de la escena principal. Hace de "director":

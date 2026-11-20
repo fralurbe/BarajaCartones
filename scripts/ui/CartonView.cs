@@ -1,7 +1,7 @@
 using Godot;
-using MiGame.Bingo;
+using BarajaCartones.Bingo;
 
-namespace MiGame.UI;
+namespace BarajaCartones.UI;
 
 /// <summary>
 /// Un cartón en pantalla: se puede pasar el ratón por encima, cogerlo,

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bev4oo51ooqps"]
+
+[ext_resource type="Script" uid="uid://dwok2l03jjdmq" path="res://scripts/ui/CartonView.cs" id="1_2v776"]
+[ext_resource type="Script" uid="uid://ky76lntvg2lj" path="res://scripts/ui/CaraCarton.cs" id="2_mvg1i"]
+[ext_resource type="Shader" uid="uid://c47himx0b6s0" path="res://shaders/inclinacion.gdshader" id="3_xk56k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_le4yd"]
+shader = ExtResource("3_xk56k")
+shader_parameter/rot_x = 0.0
+shader_parameter/rot_y = 0.0
+shader_parameter/distancia = 3.0
+shader_parameter/aspecto = 2.386
+shader_parameter/margen = 0.08
+shader_parameter/brillo = 0.0
+shader_parameter/luz = Vector2(0.5, 0.5)
+
+[node name="Carton" type="Control" unique_id=756231200]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 420.0
+offset_bottom = 176.0
+script = ExtResource("1_2v776")
+
+[node name="Render" type="SubViewport" parent="." unique_id=259807052]
+transparent_bg = true
+size = Vector2i(420, 176)
+render_target_update_mode = 1
+
+[node name="Cara" type="Control" parent="Render" unique_id=961068608]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 420.0
+offset_bottom = 176.0
+script = ExtResource("2_mvg1i")
+
+[node name="Visual" type="TextureRect" parent="." unique_id=2122396170]
+material = SubResource("ShaderMaterial_le4yd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1

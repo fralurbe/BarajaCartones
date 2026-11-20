@@ -96,11 +96,20 @@ punto. Abre `inclinacion.gdshader`, selecciona el nodo `Visual` en
 5. Que al soltar un cartón en la mano se inserte en la posición del ratón,
    no al final.
 
-## Siguiente paso: versión 3D (tipo Inscryption)
-Se reutilizan `CartonBingo` y `CaraCarton` + `SubViewport` tal cual. Cambia:
-- `Visual` pasa a ser un `MeshInstance3D` (un `QuadMesh`) cuyo material usa la
-  textura del SubViewport.
-- La mesa es un plano 3D con luces y una `Camera3D`.
-- Para coger los cartones: un rayo desde la cámara
-  (`ProjectRayOrigin`/`ProjectRayNormal`) o un `Area3D` en cada cartón.
-- La inclinación ya no necesita shader: es rotación 3D real.
+## Versión 3D
+
+Escena `escenas/juego3d.tscn` (un solo nodo) + `scripts/Juego3D.cs` y
+`scripts/ui3d/`. **Todo se crea por código**, sin editor. Ejecutar:
+```powershell
+dotnet build; & "C:\godot\CSharp\Godot_v4.7.2-stable_mono_win64\Godot_v4.7.2-stable_mono_win64_console.exe" --path . escenas/juego3d.tscn
+```
+
+| Archivo | Qué enseña |
+|---|---|
+| `Juego3D.cs` | Montar una escena 3D por código: `WorldEnvironment` (cielo, luz ambiental, tonemapping, SSAO), luces direccionales con sombras, `Camera3D`, UI 2D encima con `CanvasLayer`. Rayo del ratón (`ProjectRayOrigin`/`ProjectRayNormal`) y `Plane.IntersectsRay`. `_UnhandledInput` frente a `_Input` |
+| `ui3d/Carton3D.cs` | Mallas (`BoxMesh`, `PlaneMesh`), `StandardMaterial3D`, "hornear" un SubViewport en una `ImageTexture` con mipmaps, intersección rayo-rectángulo pasando a coordenadas locales (`AffineInverse`), tweens de `Quaternion` |
+| `ui3d/Zona3D.cs` y hijas | Igual que en 2D, pero las posiciones son `Vector3` y las rotaciones `Quaternion` |
+
+Qué se reutiliza de 2D sin cambios: `CartonBingo` (datos) y `CaraCarton`
+(el dibujo del cartón). Qué desaparece: el shader de inclinación, porque
+ahora la inclinación es rotación 3D real y la luz y las sombras las pone el motor.
